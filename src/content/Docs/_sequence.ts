@@ -114,6 +114,7 @@ export const docsSequence = [
             subItems: [
               { label: "Quick Fixes / Operational Tasks"},
               { label: "Monitoring, Logs, & Management"},
+              { label: "Infrastructure Upkeep and Advanced Operations"},
 
             ],
           },
