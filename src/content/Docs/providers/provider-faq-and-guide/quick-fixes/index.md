@@ -73,7 +73,6 @@ I[2022-11-11|12:09:11.451] bid complete                                 module=b
 kubectl -n akash-services delete pods -l app=akash-provider
 ```
 
-
 ## Kill Zombie Processes
 
 ### Issue
@@ -274,6 +273,7 @@ Since providers cannot control the internal configuration of tenant containers, 
  ```
 
 This workaround will help mitigate the impact of zombie processes on the system by periodically terminating their parent processes, thus preventing the system's PID table from being overwhelmed.
+
 
 ## Close Leases Based on Image
 
@@ -680,6 +680,8 @@ SHELL=/bin/bash
 EOF
 
 ```
+
+
 
 
 ## Dangling Deployments

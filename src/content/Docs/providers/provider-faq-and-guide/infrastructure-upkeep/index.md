@@ -7,6 +7,10 @@ categories: ["Providers"]
  linkTitle: "Infrastructure, Upkeep, and Advanced Operations"
 --- 
 
+- [Maintaining and Rotating Kubernetes/etcd Certificates: A How-To Guide](#maintaining-and-rotating-kubernetes-etcd-certificates-a-how-to-guide)
+- [Provider Bid Script Migration - GPU Models](#provider-bid-script-migration---gpu-models)
+- [GPU Provider Troubleshooting](#gpu-provider-troubleshooting)
+
 ## Maintaining and Rotating Kubernetes/etcd Certificates: A How-To Guide
 
 > The following doc is based on [Certificate Management with kubeadm](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/) & [https://www.txconsole.com/posts/how-to-renew-certificate-manually-in-kubernetes](https://www.txconsole.com/posts/how-to-renew-certificate-manually-in-kubernetes)
@@ -33,7 +37,7 @@ root@node1:~# kubeadm certs check-expiration
 
 #### Backup etcd DB
 
-It is crucial to back up your etcd DB as it contains your K8s cluster state! So make sure to backup your etcd DB first before rotating the certs!
+It is crucial to back up your `etcd` DB as it contains your K8s cluster state! So make sure to backup your etcd DB first before rotating the certs!
 
 ##### Take the etcd DB Backup
 
@@ -84,6 +88,8 @@ kubeadm certs check-expiration
 ```
 
 Repeat the process for all control plane nodes, one at a time, if you have a HA Kubernetes cluster.
+
+
 
 ## Provider Bid Script Migration - GPU Models
 
