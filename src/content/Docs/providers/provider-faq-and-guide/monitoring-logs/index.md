@@ -2,8 +2,9 @@
 categories: ["Providers"]
 tags: []
 weight: 2
-title: "Monitoring, Logs, & Management"
-linkTitle: "Monitoring, Logs, & Management"
+title: "Provider Maintenance, Logs, and Troubleshooting"
+linkTitle: "Provider Maintenance, Logs, and Troubleshooting
+"
 ---
 
 This section addresses common questions about monitoring, logging, and managing Akash provider operations. It aims to equip providers with the knowledge and tools necessary to effectively oversee their infrastructure, manage leases, track revenue, and troubleshoot issues.

@@ -2,8 +2,8 @@
 categories: ["Providers"]
 tags: []
 weight: 2
-title: "Quick Fixes / Operational Tasks"
-linkTitle: "Quick Fixes / Operational Tasks"
+title: "Provider Lease Management"
+linkTitle: "Provider Lease Management"
 ---
 
 These quick fixes improve the Akash provider experience, streamline workflow management, and ensure system stability. Hopefully, this will enable Akash providers to efficiently manage and optimize their infrastructure.
