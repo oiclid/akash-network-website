@@ -1,12 +1,12 @@
 ---
 categories: ["Providers"]
-tags: []
-weight: 2
+tags: ["Akash Provider", "GPU", "Resources"]
+weight: 3
 title: "GPU Resource Enablement (Optional Step)"
 linkTitle: "GPU Resource Enablement (Optional Step)"
 ---
 
-The steps involved in enabling your Akash Provider to host GPU resources are covered in this section and via these steps:
+The steps involved in enabling your Akash Provider to host GPU resources are covered in this section and via these steps. For comprehensive hardware requirements and best practices, including GPU specifications and configurations, please refer to our [Hardware Best Practices](/docs/providers/build-a-cloud-provider/hardware-best-practices/) guide.
 
 - [GPU Provider Configuration](#gpu-provider-configuration)
 - [Enabling GPU Resources on Akash](#enabling-gpu-resources-on-akash)
@@ -43,16 +43,15 @@ apt autoremove
 
 #### Install Latest NVIDIA Drivers
 
-> _**NOTE**_ - replace `2204` with your Ubuntu version (e.g. `2404` for Ubuntu noble release)
-
+> _**NOTE**_ - Your Ubuntu version should be 24.04.
 > _**NOTE**_ - Running `apt dist-upgrade` with the official NVIDIA repo bumps the `nvidia` packages along with the `nvidia-fabricmanager`, without version mismatch issue.
 
 - Add the official nvidia repo
 
 ```
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/3bf863cc.pub && \
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/3bf863cc.pub && \
 apt-key add 3bf863cc.pub && \
-echo "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/ /" | tee /etc/apt/sources.list.d/nvidia-official-repo.list && \
+echo "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/ /" | tee /etc/apt/sources.list.d/nvidia-official-repo.list && \
 apt update
 ```
 
@@ -167,7 +166,7 @@ These guides are essential for ensuring GPU compatibility, particularly for prov
 
 ### 2. Troubleshooting Undetected GPUs in `gpus.json`
 
-In some cases, a provider’s GPU may not be recognized if it isn’t listed in the [gpus.json](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json) file. To check if your GPU model is missing, use the following command to list GPU details on your system:
+In some cases, a provider's GPU may not be recognized if it isn't listed in the [gpus.json](https://github.com/akash-network/provider-configs/blob/main/devices/pcie/gpus.json) file. To check if your GPU model is missing, use the following command to list GPU details on your system:
 
 ```bash
 provider-services tools psutil list gpu | jq '.cards[] | .pci | {vendor: .vendor, product: .product}'

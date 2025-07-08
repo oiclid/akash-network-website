@@ -1,5 +1,6 @@
 ---
 import FooterLink from "@/components/footer/footer-link.astro";
+import { socialLinks } from "@/lib/constants";
 import { shouldHideCta } from "@/utils/hideCta";
 import clsx from "clsx";
 import DarkModeToggle from "../dark-mode-toggle.astro";
@@ -17,27 +18,27 @@ import SubscribeButton from "./subscribe-button.astro";
 const socials = [
   {
     name: "Twitter",
-    link: "https://twitter.com/akashnet_",
+    link: socialLinks.twitter,
     icon: TwitterIcon,
   },
   {
     name: "Github",
-    link: "https://github.com/akash-network",
+    link: socialLinks.github,
     icon: GithubIcon,
   },
   {
     name: "Discord",
-    link: "https://discord.com/invite/akash",
+    link: socialLinks.discord,
     icon: DiscordIcon,
   },
   {
     name: "Youtube",
-    link: "https://www.youtube.com/c/AkashNetwork",
+    link: socialLinks.youtube,
     icon: YoutubeIcon,
   },
   {
     name: "Telegram",
-    link: "https://t.me/AkashNW",
+    link: socialLinks.telegram,
     icon: TelegramIcon,
   },
 ];
@@ -81,8 +82,8 @@ const links = [
     title: "Development",
     links: [
       {
-        title: "Meetings",
-        link: "/current-groups/special-interest-groups/sig-analytics/",
+        title: "Get Involved",
+        link: "/development/welcome/",
       },
       {
         title: "Product Strategy",
@@ -102,8 +103,8 @@ const links = [
     title: "Community",
     links: [
       {
-        title: "Contributions",
-        link: "/community/community-contributions/",
+        title: "Welcome",
+        link: "/community/welcome/",
       },
       {
         title: "Akash Insiders",
@@ -173,7 +174,7 @@ const shouldHide = shouldHideCta(pathname);
         <AkashFooterLogo />
       </a>
       <div class="mt-4 md:hidden">
-        <SpeakToExpert size="small" />
+        <SpeakToExpert size="small" client:load />
       </div>
 
       <div class="mt-10 flex flex-col items-start justify-start lg:hidden">
@@ -207,7 +208,7 @@ const shouldHide = shouldHideCta(pathname);
             ))
           }
         </div>
-        <SpeakToExpert size="small" />
+        <SpeakToExpert size="small" client:load />
       </div>
       <div
         class="grid grid-cols-3 justify-between gap-y-10 md:grid-cols-5 md:gap-x-[30px] lg:gap-x-7 xl:gap-x-10"

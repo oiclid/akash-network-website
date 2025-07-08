@@ -16,10 +16,12 @@ const DesktopTableGpu = ({
   subCom,
   isLoading,
   filteredData,
+  counts,
 }: {
   subCom: boolean;
   isLoading: boolean;
   filteredData: Gpus["models"];
+  counts?: boolean;
 }) => {
   const [hoveredRowIndex, setHoveredRowIndex] = useState<number | null>(null);
 
@@ -43,7 +45,7 @@ const DesktopTableGpu = ({
               GPU Model
             </th>
             <th className="w-[30%]  text-left text-sm font-medium tracking-normal text-linkText ">
-              Availability
+              Utilization
             </th>
             <th className="w-[16%] whitespace-nowrap  text-left text-sm font-medium tracking-normal text-linkText ">
               Price Range
@@ -152,6 +154,7 @@ const DesktopTableGpu = ({
                     <AvailabilityBar
                       available={model?.availability?.available}
                       total={model?.availability?.total}
+                      counts={counts}
                     />
                   </td>
                   <td className="border-y border-r p-0">
